@@ -54,9 +54,16 @@ Page({
     //   userInfo: e.detail.userInfo,
     //   hasUserInfo: true
     // })
+    var obj = { judge: true }
+    var obj1 = { judge: false }
     if (!e.detail.userInfo) {
-      this.triggerEvent('myevent')
-      return
+      this.triggerEvent('myevent', obj1)
+    } else {
+      this.triggerEvent('myevent', obj)
+
+      app.globalData.userInfo = e.detail.userInfo
+      // 存入uid
+      wx.setStorageSync('uid', 1)
     }
   },
   /**

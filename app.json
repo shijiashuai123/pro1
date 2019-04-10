@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/component/login/index"
+    "pages/component/login/index",
+    "pages/share/index",
+    "pages/upload/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

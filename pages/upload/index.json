@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-steps": "../../dist/steps/index",
+    "i-step": "../../dist/step/index",
+    "i-index": "../../dist/index/index",
+    "i-index-item": "../../dist/index-item/index"
+  }
+}

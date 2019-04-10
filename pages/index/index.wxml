@@ -1,5 +1,10 @@
 <!--index.wxml-->
-<login bind:myevent="userConcelAuthorization"></login>
+<view wx:if="{{!isLogin}}">
+  <login bind:myevent="userConcelAuthorization"></login>
+</view>
+<view wx:else>
+  <button bindtap='toAuthenticatePage'>开始鉴定</button>
+</view>
 <i-modal title="还未授权" visible="{{judgeIsUserLogin}}" bind:ok="handleToLoginPage" bind:cancel="handleCloseLoginDialog">
   <view>点击授权进行授权吧</view>
 </i-modal>
