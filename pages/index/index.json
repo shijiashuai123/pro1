@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-modal": "../../../dist/modal/index",
+    "login": "../component/login/index",
+    "i-toast": "../../dist/toast/index"
+  }
+}
