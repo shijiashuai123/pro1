@@ -1,8 +1,10 @@
 {
+  "navigationBarTitleText": "上传图片",
   "usingComponents": {
     "i-steps": "../../dist/steps/index",
     "i-step": "../../dist/step/index",
     "i-index": "../../dist/index/index",
-    "i-index-item": "../../dist/index-item/index"
+    "i-index-item": "../../dist/index-item/index",
+    "i-toast": "../../dist/toast/index"
   }
 }

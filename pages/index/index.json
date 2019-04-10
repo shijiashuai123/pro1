@@ -1,5 +1,6 @@
 {
   "component": true,
+  "navigationBarTitleText": "首页",
   "usingComponents": {
     "i-modal": "../../../dist/modal/index",
     "login": "../component/login/index",

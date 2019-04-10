@@ -1,7 +1,7 @@
 <!--pages/upload/index.wxml-->
 <!-- <text>pages/upload/index.wxml</text> -->
 <!-- 步骤条 -->
-<view wx:if="{{!judgeIsOpenIndexSelector}}">
+<view wx:if="{{judgeIsOpenIndexSelector}}">
   <i-steps>
       <i-step status="{{item.status}}" wx:for="{{stepList}}" wx:key="{{index}}">
           <view slot="title">{{item.name}}</view>
@@ -11,7 +11,7 @@
 </view>
 <!-- 打开index选择器 -->
 <!-- index选择器 -->
-<view class='indexSelBox' wx:if="{{judgeIsOpenIndexSelector}}">
+<view class='indexSelBox' hidden="{{judgeIsOpenIndexSelector}}">
   <view class="i-index-demo">
       <i-index height="100%" bind:change="onChange">
           <i-index-item 
@@ -20,11 +20,13 @@
               wx:key="{{index}}"
               wx:for-item="item" name="{{item.key}}">
               <view 
-                  class="i-index-demo-item" 
+                  class="i-index-demo-item indSelItem" 
                   wx:for="{{item.list}}" 
                   wx:for-index="in" 
                   wx:key="{{in}}" 
-                  wx:for-item="it">
+                  wx:for-item="it"
+                  bindtap='selCurItem'
+                  data-obj="{{it}}">
                   {{it.name}}
               </view>
           </i-index-item>
@@ -38,9 +40,19 @@
   </view>
 </view>
 <!-- 上传图片 -->
-<view style='display: flex;' wx:if="{{stepList[1].status == 'process'}}">
-  <view wx:for="{{uploadNum}}" wx:key="{{index}}">
-    <image bindtap='uploadImg' data-ind="{{index}}"  style='width: 100rpx; height: 100rpx;' src='{{images[index]}}' wx:if="{{images[index]}}"></image>
-    <button bindtap='uploadImg' data-ind="{{index}}"  style='width: 160rpx;' bindtap='uploadImg' wx:else>上传{{index}}</button>
+<view class='uploadBox' wx:if="{{stepList[1].status == 'process'}}">
+  <view class='uploadItem'>
+    <view wx:for="{{uploadNum}}" wx:key="{{index}}" class="uploadImgBtn">
+      <image bindtap='uploadImg' data-ind="{{index}}"  style='width: 100rpx; height: 100rpx;' src='{{images[index]}}' wx:if="{{images[index]}}"></image>
+      <view bindtap='uploadImg' data-ind="{{index}}" bindtap='uploadImg' wx:else>上传{{index}}</view>
+    </view>
+  </view>
+  <view class='submitBox'>
+    <view class="submitBtn" bindtap='submitAu'>提交鉴定</view>
   </view>
 </view>
+<!-- 智能审核 -->
+<view class="IntelligentAuditBox" wx:if="{{stepList[2].status == 'process'}}">
+  <text>进入智能审核</text>
+</view>
+<i-toast id="toast" /> <!-- 轻提示 -->

@@ -31,3 +31,52 @@
   width: 100vw;
   height: 100vh;
 }
+/* 选择器样式 */
+.indSelItem {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #333;
+  border-bottom: 1rpx solid #eee;
+  background-color: #fff;
+}
+/* 上传图片 */
+.uploadBox {
+  margin-top: 40rpx;
+}
+.uploadItem {
+  display: flex;
+  justify-content: center;
+}
+.uploadImgBtn {
+  width:100rpx;
+  font-size:28rpx;
+  color:#333;
+  height:100rpx;
+  line-height:100rpx;
+  border:1rpx solid #aaa;
+  text-align:center;
+  margin:30rpx;
+}
+.submitBox {
+  display: flex;
+  justify-content: center;
+}
+.submitBtn {
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #82C171;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  border-radius: 6rpx;
+  box-shadow: 1rpx 1rpx 1rpx #82C171;
+}
+/* 智能审核 */
+.IntelligentAuditBox {
+  margin-top: 60rpx;
+  text-align: center;
+  font-size: 38rpx;
+  color: #333;
+}
